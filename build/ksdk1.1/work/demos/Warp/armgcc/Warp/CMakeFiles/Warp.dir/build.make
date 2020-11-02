@@ -88,9 +88,22 @@ CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/s
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/warp-kl03-ksdk1.1-boot.c.s"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/warp-kl03-ksdk1.1-boot.c -o CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/warp-kl03-ksdk1.1-boot.c.s
 
+CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devSSD1331.c.obj: CMakeFiles/Warp.dir/flags.make
+CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devSSD1331.c.obj: /students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devSSD1331.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/armgcc/Warp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devSSD1331.c.obj"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devSSD1331.c.obj   -c /students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devSSD1331.c
+
+CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devSSD1331.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devSSD1331.c.i"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devSSD1331.c > CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devSSD1331.c.i
+
+CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devSSD1331.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devSSD1331.c.s"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devSSD1331.c -o CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devSSD1331.c.s
+
 CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/warp-kl03-ksdk1.1-powermodes.c.obj: CMakeFiles/Warp.dir/flags.make
 CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/warp-kl03-ksdk1.1-powermodes.c.obj: /students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/warp-kl03-ksdk1.1-powermodes.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/armgcc/Warp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/warp-kl03-ksdk1.1-powermodes.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/armgcc/Warp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/warp-kl03-ksdk1.1-powermodes.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/warp-kl03-ksdk1.1-powermodes.c.obj   -c /students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/warp-kl03-ksdk1.1-powermodes.c
 
 CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/warp-kl03-ksdk1.1-powermodes.c.i: cmake_force
@@ -100,19 +113,6 @@ CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/s
 CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/warp-kl03-ksdk1.1-powermodes.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/warp-kl03-ksdk1.1-powermodes.c.s"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/warp-kl03-ksdk1.1-powermodes.c -o CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/warp-kl03-ksdk1.1-powermodes.c.s
-
-CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devBMX055.c.obj: CMakeFiles/Warp.dir/flags.make
-CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devBMX055.c.obj: /students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devBMX055.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/armgcc/Warp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devBMX055.c.obj"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devBMX055.c.obj   -c /students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devBMX055.c
-
-CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devBMX055.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devBMX055.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devBMX055.c > CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devBMX055.c.i
-
-CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devBMX055.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devBMX055.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devBMX055.c -o CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devBMX055.c.s
 
 CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devMMA8451Q.c.obj: CMakeFiles/Warp.dir/flags.make
 CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devMMA8451Q.c.obj: /students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devMMA8451Q.c
@@ -127,100 +127,9 @@ CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/s
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devMMA8451Q.c.s"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devMMA8451Q.c -o CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devMMA8451Q.c.s
 
-CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devLPS25H.c.obj: CMakeFiles/Warp.dir/flags.make
-CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devLPS25H.c.obj: /students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devLPS25H.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/armgcc/Warp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devLPS25H.c.obj"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devLPS25H.c.obj   -c /students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devLPS25H.c
-
-CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devLPS25H.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devLPS25H.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devLPS25H.c > CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devLPS25H.c.i
-
-CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devLPS25H.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devLPS25H.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devLPS25H.c -o CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devLPS25H.c.s
-
-CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devHDC1000.c.obj: CMakeFiles/Warp.dir/flags.make
-CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devHDC1000.c.obj: /students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devHDC1000.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/armgcc/Warp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devHDC1000.c.obj"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devHDC1000.c.obj   -c /students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devHDC1000.c
-
-CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devHDC1000.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devHDC1000.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devHDC1000.c > CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devHDC1000.c.i
-
-CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devHDC1000.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devHDC1000.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devHDC1000.c -o CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devHDC1000.c.s
-
-CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devMAG3110.c.obj: CMakeFiles/Warp.dir/flags.make
-CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devMAG3110.c.obj: /students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devMAG3110.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/armgcc/Warp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devMAG3110.c.obj"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devMAG3110.c.obj   -c /students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devMAG3110.c
-
-CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devMAG3110.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devMAG3110.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devMAG3110.c > CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devMAG3110.c.i
-
-CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devMAG3110.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devMAG3110.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devMAG3110.c -o CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devMAG3110.c.s
-
-CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devL3GD20H.c.obj: CMakeFiles/Warp.dir/flags.make
-CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devL3GD20H.c.obj: /students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devL3GD20H.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/armgcc/Warp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devL3GD20H.c.obj"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devL3GD20H.c.obj   -c /students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devL3GD20H.c
-
-CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devL3GD20H.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devL3GD20H.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devL3GD20H.c > CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devL3GD20H.c.i
-
-CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devL3GD20H.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devL3GD20H.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devL3GD20H.c -o CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devL3GD20H.c.s
-
-CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devBME680.c.obj: CMakeFiles/Warp.dir/flags.make
-CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devBME680.c.obj: /students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devBME680.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/armgcc/Warp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devBME680.c.obj"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devBME680.c.obj   -c /students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devBME680.c
-
-CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devBME680.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devBME680.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devBME680.c > CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devBME680.c.i
-
-CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devBME680.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devBME680.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devBME680.c -o CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devBME680.c.s
-
-CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devCCS811.c.obj: CMakeFiles/Warp.dir/flags.make
-CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devCCS811.c.obj: /students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devCCS811.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/armgcc/Warp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devCCS811.c.obj"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devCCS811.c.obj   -c /students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devCCS811.c
-
-CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devCCS811.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devCCS811.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devCCS811.c > CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devCCS811.c.i
-
-CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devCCS811.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devCCS811.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devCCS811.c -o CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devCCS811.c.s
-
-CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devAMG8834.c.obj: CMakeFiles/Warp.dir/flags.make
-CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devAMG8834.c.obj: /students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devAMG8834.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/armgcc/Warp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devAMG8834.c.obj"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devAMG8834.c.obj   -c /students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devAMG8834.c
-
-CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devAMG8834.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devAMG8834.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devAMG8834.c > CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devAMG8834.c.i
-
-CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devAMG8834.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devAMG8834.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devAMG8834.c -o CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devAMG8834.c.s
-
 CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devISL23415.c.obj: CMakeFiles/Warp.dir/flags.make
 CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devISL23415.c.obj: /students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devISL23415.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/armgcc/Warp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devISL23415.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/armgcc/Warp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devISL23415.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devISL23415.c.obj   -c /students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devISL23415.c
 
 CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devISL23415.c.i: cmake_force
@@ -233,7 +142,7 @@ CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/s
 
 CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/SEGGER_RTT.c.obj: CMakeFiles/Warp.dir/flags.make
 CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/SEGGER_RTT.c.obj: /students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/SEGGER_RTT.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/armgcc/Warp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/SEGGER_RTT.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/armgcc/Warp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/SEGGER_RTT.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/SEGGER_RTT.c.obj   -c /students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/SEGGER_RTT.c
 
 CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/SEGGER_RTT.c.i: cmake_force
@@ -246,7 +155,7 @@ CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/s
 
 CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/SEGGER_RTT_printf.c.obj: CMakeFiles/Warp.dir/flags.make
 CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/SEGGER_RTT_printf.c.obj: /students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/SEGGER_RTT_printf.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/armgcc/Warp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/SEGGER_RTT_printf.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/armgcc/Warp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/SEGGER_RTT_printf.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/SEGGER_RTT_printf.c.obj   -c /students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/SEGGER_RTT_printf.c
 
 CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/SEGGER_RTT_printf.c.i: cmake_force
@@ -259,7 +168,7 @@ CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/s
 
 CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/platform/drivers/src/i2c/fsl_i2c_irq.c.obj: CMakeFiles/Warp.dir/flags.make
 CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/platform/drivers/src/i2c/fsl_i2c_irq.c.obj: /students/em702/Warp-firmware/build/ksdk1.1/work/platform/drivers/src/i2c/fsl_i2c_irq.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/armgcc/Warp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/platform/drivers/src/i2c/fsl_i2c_irq.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/armgcc/Warp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/platform/drivers/src/i2c/fsl_i2c_irq.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/platform/drivers/src/i2c/fsl_i2c_irq.c.obj   -c /students/em702/Warp-firmware/build/ksdk1.1/work/platform/drivers/src/i2c/fsl_i2c_irq.c
 
 CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/platform/drivers/src/i2c/fsl_i2c_irq.c.i: cmake_force
@@ -272,7 +181,7 @@ CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/platform/dri
 
 CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/platform/drivers/src/spi/fsl_spi_irq.c.obj: CMakeFiles/Warp.dir/flags.make
 CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/platform/drivers/src/spi/fsl_spi_irq.c.obj: /students/em702/Warp-firmware/build/ksdk1.1/work/platform/drivers/src/spi/fsl_spi_irq.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/armgcc/Warp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/platform/drivers/src/spi/fsl_spi_irq.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/armgcc/Warp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/platform/drivers/src/spi/fsl_spi_irq.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/platform/drivers/src/spi/fsl_spi_irq.c.obj   -c /students/em702/Warp-firmware/build/ksdk1.1/work/platform/drivers/src/spi/fsl_spi_irq.c
 
 CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/platform/drivers/src/spi/fsl_spi_irq.c.i: cmake_force
@@ -285,7 +194,7 @@ CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/platform/dri
 
 CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/platform/startup/MKL03Z4/system_MKL03Z4.c.obj: CMakeFiles/Warp.dir/flags.make
 CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/platform/startup/MKL03Z4/system_MKL03Z4.c.obj: /students/em702/Warp-firmware/build/ksdk1.1/work/platform/startup/MKL03Z4/system_MKL03Z4.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/armgcc/Warp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/platform/startup/MKL03Z4/system_MKL03Z4.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/armgcc/Warp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/platform/startup/MKL03Z4/system_MKL03Z4.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/platform/startup/MKL03Z4/system_MKL03Z4.c.obj   -c /students/em702/Warp-firmware/build/ksdk1.1/work/platform/startup/MKL03Z4/system_MKL03Z4.c
 
 CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/platform/startup/MKL03Z4/system_MKL03Z4.c.i: cmake_force
@@ -298,7 +207,7 @@ CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/platform/sta
 
 CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/platform/startup/startup.c.obj: CMakeFiles/Warp.dir/flags.make
 CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/platform/startup/startup.c.obj: /students/em702/Warp-firmware/build/ksdk1.1/work/platform/startup/startup.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/armgcc/Warp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/platform/startup/startup.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/armgcc/Warp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/platform/startup/startup.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/platform/startup/startup.c.obj   -c /students/em702/Warp-firmware/build/ksdk1.1/work/platform/startup/startup.c
 
 CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/platform/startup/startup.c.i: cmake_force
@@ -311,7 +220,7 @@ CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/platform/sta
 
 CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/boards/Warp/gpio_pins.c.obj: CMakeFiles/Warp.dir/flags.make
 CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/boards/Warp/gpio_pins.c.obj: /students/em702/Warp-firmware/build/ksdk1.1/work/boards/Warp/gpio_pins.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/armgcc/Warp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/boards/Warp/gpio_pins.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/armgcc/Warp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/boards/Warp/gpio_pins.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/boards/Warp/gpio_pins.c.obj   -c /students/em702/Warp-firmware/build/ksdk1.1/work/boards/Warp/gpio_pins.c
 
 CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/boards/Warp/gpio_pins.c.i: cmake_force
@@ -327,16 +236,9 @@ Warp_OBJECTS = \
 "CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/platform/utilities/src/fsl_misc_utilities.c.obj" \
 "CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/platform/startup/MKL03Z4/gcc/startup_MKL03Z4.S.obj" \
 "CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/warp-kl03-ksdk1.1-boot.c.obj" \
+"CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devSSD1331.c.obj" \
 "CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/warp-kl03-ksdk1.1-powermodes.c.obj" \
-"CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devBMX055.c.obj" \
 "CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devMMA8451Q.c.obj" \
-"CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devLPS25H.c.obj" \
-"CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devHDC1000.c.obj" \
-"CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devMAG3110.c.obj" \
-"CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devL3GD20H.c.obj" \
-"CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devBME680.c.obj" \
-"CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devCCS811.c.obj" \
-"CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devAMG8834.c.obj" \
 "CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devISL23415.c.obj" \
 "CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/SEGGER_RTT.c.obj" \
 "CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/SEGGER_RTT_printf.c.obj" \
@@ -352,16 +254,9 @@ Warp_EXTERNAL_OBJECTS =
 release/Warp.elf: CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/platform/utilities/src/fsl_misc_utilities.c.obj
 release/Warp.elf: CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/platform/startup/MKL03Z4/gcc/startup_MKL03Z4.S.obj
 release/Warp.elf: CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/warp-kl03-ksdk1.1-boot.c.obj
+release/Warp.elf: CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devSSD1331.c.obj
 release/Warp.elf: CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/warp-kl03-ksdk1.1-powermodes.c.obj
-release/Warp.elf: CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devBMX055.c.obj
 release/Warp.elf: CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devMMA8451Q.c.obj
-release/Warp.elf: CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devLPS25H.c.obj
-release/Warp.elf: CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devHDC1000.c.obj
-release/Warp.elf: CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devMAG3110.c.obj
-release/Warp.elf: CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devL3GD20H.c.obj
-release/Warp.elf: CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devBME680.c.obj
-release/Warp.elf: CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devCCS811.c.obj
-release/Warp.elf: CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devAMG8834.c.obj
 release/Warp.elf: CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devISL23415.c.obj
 release/Warp.elf: CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/SEGGER_RTT.c.obj
 release/Warp.elf: CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/SEGGER_RTT_printf.c.obj
@@ -373,7 +268,7 @@ release/Warp.elf: CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1
 release/Warp.elf: CMakeFiles/Warp.dir/build.make
 release/Warp.elf: ../../../../lib/ksdk_platform_lib/armgcc/KL03Z4/release/libksdk_platform.a
 release/Warp.elf: CMakeFiles/Warp.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/armgcc/Warp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Linking C executable release/Warp.elf"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/armgcc/Warp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Linking C executable release/Warp.elf"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Warp.dir/link.txt --verbose=$(VERBOSE)
 	/usr/bin/arm-none-eabi-objcopy -Oihex /students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/armgcc/Warp/release/Warp.elf /students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/armgcc/Warp/release/Warp.hex
 	/usr/bin/arm-none-eabi-objcopy -Obinary /students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/armgcc/Warp/release/Warp.elf /students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/armgcc/Warp/release/Warp.bin
