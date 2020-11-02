@@ -204,33 +204,6 @@ students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/SEGGER_RTT_printf
 	$(MAKE) -f CMakeFiles/Warp.dir/build.make CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/SEGGER_RTT_printf.c.s
 .PHONY : students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/SEGGER_RTT_printf.c.s
 
-students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devADXL362.obj: students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devADXL362.c.obj
-
-.PHONY : students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devADXL362.obj
-
-# target to build an object file
-students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devADXL362.c.obj:
-	$(MAKE) -f CMakeFiles/Warp.dir/build.make CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devADXL362.c.obj
-.PHONY : students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devADXL362.c.obj
-
-students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devADXL362.i: students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devADXL362.c.i
-
-.PHONY : students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devADXL362.i
-
-# target to preprocess a source file
-students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devADXL362.c.i:
-	$(MAKE) -f CMakeFiles/Warp.dir/build.make CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devADXL362.c.i
-.PHONY : students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devADXL362.c.i
-
-students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devADXL362.s: students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devADXL362.c.s
-
-.PHONY : students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devADXL362.s
-
-# target to generate assembly for a file
-students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devADXL362.c.s:
-	$(MAKE) -f CMakeFiles/Warp.dir/build.make CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devADXL362.c.s
-.PHONY : students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devADXL362.c.s
-
 students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devAMG8834.obj: students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devAMG8834.c.obj
 
 .PHONY : students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devAMG8834.obj
@@ -501,33 +474,6 @@ students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devMMA8451Q.c.s:
 	$(MAKE) -f CMakeFiles/Warp.dir/build.make CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devMMA8451Q.c.s
 .PHONY : students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devMMA8451Q.c.s
 
-students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devSI7021.obj: students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devSI7021.c.obj
-
-.PHONY : students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devSI7021.obj
-
-# target to build an object file
-students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devSI7021.c.obj:
-	$(MAKE) -f CMakeFiles/Warp.dir/build.make CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devSI7021.c.obj
-.PHONY : students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devSI7021.c.obj
-
-students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devSI7021.i: students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devSI7021.c.i
-
-.PHONY : students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devSI7021.i
-
-# target to preprocess a source file
-students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devSI7021.c.i:
-	$(MAKE) -f CMakeFiles/Warp.dir/build.make CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devSI7021.c.i
-.PHONY : students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devSI7021.c.i
-
-students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devSI7021.s: students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devSI7021.c.s
-
-.PHONY : students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devSI7021.s
-
-# target to generate assembly for a file
-students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devSI7021.c.s:
-	$(MAKE) -f CMakeFiles/Warp.dir/build.make CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devSI7021.c.s
-.PHONY : students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devSI7021.c.s
-
 students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/warp-kl03-ksdk1.1-boot.obj: students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/warp-kl03-ksdk1.1-boot.c.obj
 
 .PHONY : students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/warp-kl03-ksdk1.1-boot.obj
@@ -744,9 +690,6 @@ help:
 	@echo "... students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/SEGGER_RTT_printf.obj"
 	@echo "... students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/SEGGER_RTT_printf.i"
 	@echo "... students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/SEGGER_RTT_printf.s"
-	@echo "... students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devADXL362.obj"
-	@echo "... students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devADXL362.i"
-	@echo "... students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devADXL362.s"
 	@echo "... students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devAMG8834.obj"
 	@echo "... students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devAMG8834.i"
 	@echo "... students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devAMG8834.s"
@@ -777,9 +720,6 @@ help:
 	@echo "... students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devMMA8451Q.obj"
 	@echo "... students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devMMA8451Q.i"
 	@echo "... students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devMMA8451Q.s"
-	@echo "... students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devSI7021.obj"
-	@echo "... students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devSI7021.i"
-	@echo "... students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devSI7021.s"
 	@echo "... students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/warp-kl03-ksdk1.1-boot.obj"
 	@echo "... students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/warp-kl03-ksdk1.1-boot.i"
 	@echo "... students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/warp-kl03-ksdk1.1-boot.s"
