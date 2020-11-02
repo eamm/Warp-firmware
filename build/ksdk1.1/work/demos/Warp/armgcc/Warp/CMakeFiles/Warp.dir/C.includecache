@@ -906,22 +906,6 @@ warp.h
 
 /students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devMMA8451Q.h
 
-/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devSSD1331.c
-stdint.h
--
-fsl_spi_master_driver.h
-/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/fsl_spi_master_driver.h
-fsl_port_hal.h
-/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/fsl_port_hal.h
-SEGGER_RTT.h
-/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/SEGGER_RTT.h
-gpio_pins.h
-/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/gpio_pins.h
-warp.h
-/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/warp.h
-devSSD1331.h
-/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devSSD1331.h
-
 /students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devSSD1331.h
 
 /students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/warp-kl03-ksdk1.1-boot.c

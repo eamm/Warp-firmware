@@ -258,33 +258,6 @@ students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devMMA8451Q.c.s:
 	$(MAKE) -f CMakeFiles/Warp.dir/build.make CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devMMA8451Q.c.s
 .PHONY : students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devMMA8451Q.c.s
 
-students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devSSD1331.obj: students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devSSD1331.c.obj
-
-.PHONY : students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devSSD1331.obj
-
-# target to build an object file
-students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devSSD1331.c.obj:
-	$(MAKE) -f CMakeFiles/Warp.dir/build.make CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devSSD1331.c.obj
-.PHONY : students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devSSD1331.c.obj
-
-students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devSSD1331.i: students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devSSD1331.c.i
-
-.PHONY : students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devSSD1331.i
-
-# target to preprocess a source file
-students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devSSD1331.c.i:
-	$(MAKE) -f CMakeFiles/Warp.dir/build.make CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devSSD1331.c.i
-.PHONY : students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devSSD1331.c.i
-
-students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devSSD1331.s: students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devSSD1331.c.s
-
-.PHONY : students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devSSD1331.s
-
-# target to generate assembly for a file
-students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devSSD1331.c.s:
-	$(MAKE) -f CMakeFiles/Warp.dir/build.make CMakeFiles/Warp.dir/students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devSSD1331.c.s
-.PHONY : students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devSSD1331.c.s
-
 students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/warp-kl03-ksdk1.1-boot.obj: students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/warp-kl03-ksdk1.1-boot.c.obj
 
 .PHONY : students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/warp-kl03-ksdk1.1-boot.obj
@@ -507,9 +480,6 @@ help:
 	@echo "... students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devMMA8451Q.obj"
 	@echo "... students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devMMA8451Q.i"
 	@echo "... students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devMMA8451Q.s"
-	@echo "... students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devSSD1331.obj"
-	@echo "... students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devSSD1331.i"
-	@echo "... students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/devSSD1331.s"
 	@echo "... students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/warp-kl03-ksdk1.1-boot.obj"
 	@echo "... students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/warp-kl03-ksdk1.1-boot.i"
 	@echo "... students/em702/Warp-firmware/build/ksdk1.1/work/demos/Warp/src/warp-kl03-ksdk1.1-boot.s"
