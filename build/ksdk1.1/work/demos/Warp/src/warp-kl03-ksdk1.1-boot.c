@@ -1117,7 +1117,8 @@ main(void)
 	 */
 	SEGGER_RTT_ConfigUpBuffer(0, NULL, NULL, 0, SEGGER_RTT_MODE_NO_BLOCK_TRIM);
 
-
+	devSSD1331init();
+	SEGGER_RTT_WriteString(0, "I really hope that devSSD1331 is running");
 	SEGGER_RTT_WriteString(0, "\n\n\n\rBooting Warp, in 3... ");
 	OSA_TimeDelay(200);
 	SEGGER_RTT_WriteString(0, "2... ");
@@ -1353,7 +1354,6 @@ main(void)
 	 *	Notreached
 	 */
 #endif
-	devSSD1331init();
 
 	while (1)
 	{

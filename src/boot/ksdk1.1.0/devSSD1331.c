@@ -60,7 +60,6 @@ writeCommand(uint8_t commandByte)
 }
 
 
-
 int
 devSSD1331init(void)
 {
@@ -140,7 +139,6 @@ devSSD1331init(void)
 	 */
 	writeCommand(kSSD1331CommandFILL);
 	writeCommand(0x01);
-
 	/*
 	 *	Clear Screen
 	 */
@@ -155,19 +153,18 @@ devSSD1331init(void)
 	/*
 	 *	Any post-initialization drawing commands go here.
 	 */
-	//.
-	/*	
+	SEGGER_RTT_WriteString(0, "\nThis is the start of the OLED commands\n");
 	writeCommand(0x22);
 	writeCommand(0x03);
-	writeCommand(0x02);.
+	writeCommand(0x02);
+	writeCommand(0x12);
 	writeCommand(0x15);
-	writeCommand(0x0D);
-	writeCommand(0x28D);
-	writeCommand(0x0D);
-	writeCommand(0x0D);
-	writeCommand(0x28d);
-	writeCommand(0x0D);*/
-	writeCommand(0xA5);
-	
+	writeCommand(0x00);
+	writeCommand(0x1C);
+	writeCommand(0x00);
+	writeCommand(0x00);
+	writeCommand(0x1C);
+	writeCommand(0x00);
+	SEGGER_RTT_WriteString(0, "This is the end of the OLED commands\n");
 	return 0;
 }
