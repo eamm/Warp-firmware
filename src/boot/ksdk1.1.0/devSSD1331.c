@@ -3,10 +3,13 @@
 #include "fsl_spi_master_driver.h"
 #include "fsl_port_hal.h"
 
+//#include "devTextSSD1331.h"
+
 #include "SEGGER_RTT.h"
 #include "gpio_pins.h"
 #include "warp.h"
 #include "devSSD1331.h"
+
 
 volatile uint8_t	inBuffer[1];
 volatile uint8_t	payloadBytes[1];
@@ -21,10 +24,10 @@ enum
 	kSSD1331PinSCK		= GPIO_MAKE_PIN(HW_GPIOA, 9),
 	kSSD1331PinCSn		= GPIO_MAKE_PIN(HW_GPIOB, 13),
 	kSSD1331PinDC		= GPIO_MAKE_PIN(HW_GPIOA, 12),
-	kSSD1331PinRST		= GPIO_MAKE_PIN(HW_GPIOA, 2),
+	kSSD1331PinRST		= GPIO_MAKE_PIN(HW_GPIOB, 0),
 };
 
-static int
+int
 writeCommand(uint8_t commandByte)
 {
 	spi_status_t status;
@@ -59,6 +62,369 @@ writeCommand(uint8_t commandByte)
 	return status;
 }
 
+/*void displayText(char c)
+{
+	//Clear Screen
+	writeCommand(kSSD1331CommandCLEAR);
+	writeCommand(0x00);
+	writeCommand(0x00);
+	writeCommand(0x5F);
+	writeCommand(0x3F);
+
+	uint8_t char_x = 0;
+	uint8_t char_y = 0;
+
+	foreground(toRGB(0,255,0));
+	background(toRGB(255,0,0));
+	PutChar(char_x, char_y, c);
+}*/
+
+// Fill the screen with a red colour
+
+void
+redFill(void)
+{
+	// Clear Screen
+	writeCommand(kSSD1331CommandCLEAR);
+	writeCommand(0x00);
+	writeCommand(0x00);
+	writeCommand(0x5F);
+	writeCommand(0x3F);
+
+	// Fill with Red
+	writeCommand(0x22);
+	writeCommand(0x00);
+	writeCommand(0x00);
+	writeCommand(0x5F);
+	writeCommand(0x3F);
+	writeCommand(0x1C);
+	writeCommand(0x00);
+	writeCommand(0x00);
+	writeCommand(0x1C);
+	writeCommand(0x00);
+	writeCommand(0x00);
+}
+
+// Function that draws lines on the OLED display
+
+void 
+drawLine(int colStart, int rowStart, int colEnd, int rowEnd)
+{
+	writeCommand(0x21);
+	writeCommand(colStart);
+	writeCommand(rowStart);
+	writeCommand(colEnd);
+	writeCommand(rowEnd);
+	writeCommand(0x00);
+	writeCommand(0x00);
+	writeCommand(0x1C);
+}
+
+
+// Function for drawing characters to the OLED screen
+
+void
+drawChar(int startCol, int startRow, char chr)
+{
+	switch (chr) {
+		case 'm':
+			drawLine(startCol, startRow+0x07, startCol+0x06, startRow+0x07);
+			drawLine(startCol, startRow+0x08, startCol, startRow + 0x0D);
+			drawLine(startCol+0x03, startRow+0x08, startCol+0x03, startRow+0x0D);
+			drawLine(startCol+0x06, startRow+0x08, startCol+0x06, startRow+0x0D);
+			break;
+		case 'e':
+			drawLine(startCol, startRow+0x07, startCol+0x06, startRow+0x07);
+			drawLine(startCol+0x06, startRow+0x08, startCol+0x06, startRow+0x0A);
+			drawLine(startCol+0x05, startRow+0x0A, startCol+0x01, startRow+0x0A);
+			drawLine(startCol, startRow+0x08, startCol, startRow+0x0D);
+			drawLine(startCol+0x01, startRow+0x0D, startCol+0x06, startRow+0x0D);
+			break;
+		case 'T':
+			drawLine(startCol, startRow, startCol+0x06, startRow);
+			drawLine(startCol+0x03, startRow+0x01, startCol+0x03, startRow+0x0D);
+			break;
+		case 'p':
+			drawLine(startCol, startRow+0x07, startCol, startRow+0x11);
+			drawLine(startCol+0x01, startRow+0x07, startCol+0x06, startRow+0x07);
+			drawLine(startCol+0x06, startRow+0x08, startCol+0x06, startRow+0x0D);
+			drawLine(startCol+0x05, startRow+0x0D, startCol+0x01, startRow+0x0D);
+			break;
+		case 'r':
+			drawLine(startCol, startRow+0x07, startCol + 0x06, startRow+0x07);
+			drawLine(startCol, startRow+0x08, startCol, startRow+0x0D);
+			break;
+		case 'a':
+			drawLine(startCol+0x05, startRow+0x0A, startCol, startRow+0x0A);
+			drawLine(startCol, startRow+0x0A, startCol, startRow+0x0D);
+			drawLine(startCol, startRow+0x0D, startCol+0x06, startRow+0x0D);
+			drawLine(startCol+0x06, startRow+0x0D, startCol+0x06, startRow+0x07);
+			drawLine(startCol+0x05, startRow+0x07, startCol, startRow+0x07);
+			break;
+		case 't':
+			drawLine(startCol+0x03, startRow+0x04, startCol+0x03, startRow+0x0D);
+			drawLine(startCol+0x01, startRow+0x07, startCol+0x05, startRow+0x07);
+			break;
+		case 'u':
+			drawLine(startCol, startRow+0x07, startCol, startRow+0x0D);
+			drawLine(startCol+0x01, startRow+0x0D, startCol+0x06, startRow+0x0D);
+			drawLine(startCol+0x06, startRow+0x0C, startCol+0x06, startRow+0x07);
+			break;
+		case '1':
+			drawLine(startCol+0x06, startRow, startCol+0x06, startRow+0x0D);
+			break;
+		case '2':
+			drawLine(startCol, startRow, startCol+0x06, startRow);
+			drawLine(startCol+0x06, startRow+0x01, startCol+0x06, startRow+0x06);
+			drawLine(startCol+0x05, startRow+0x06, startCol, startRow+0x06);
+			drawLine(startCol, startRow+0x07, startCol, startRow+0x0D);
+			drawLine(startCol+0x01, startRow+0x0D, startCol+0x06, startRow+0x0D);
+			break;
+		case '3':
+			drawLine(startCol+0x06, startRow, startCol+0x06, startRow+0x0D);
+			drawLine(startCol+0x05, startRow, startCol, startRow);
+			drawLine(startCol, startRow+0x06, startCol+0x05, startRow+0x06);
+			drawLine(startCol, startRow+0x0D, startCol+0x05, startRow+0x0D);
+			break;
+		case '4':
+			drawLine(startCol+0x06, startRow, startCol+0x06, startRow+0x0D);
+			drawLine(startCol+0x05, startRow+0x06, startCol, startRow+0x06);
+			drawLine(startCol, startRow, startCol, startRow+0x06);
+			break;
+		case '5':
+			drawLine(startCol, startRow, startCol+0x06, startRow);
+			drawLine(startCol, startRow+0x06, startCol+0x06, startRow+0x06);
+			drawLine(startCol, startRow+0x0D, startCol+0x06, startRow+0x0D);
+			drawLine(startCol+0x06, startRow+0x07, startCol+0x06, startRow+0x0D);
+			drawLine(startCol, startRow+0x01, startCol, startRow+0x05);
+			break;
+		case '6':
+			drawLine(startCol, startRow, startCol, startRow+0x0D);
+			drawLine(startCol+0x06, startRow+0x07, startCol+0x06, startRow+0x0C);
+			drawLine(startCol+0x01, startRow+0x06, startCol+0x06, startRow+0x06);
+			drawLine(startCol+0x01, startRow, startCol+0x06, startRow);
+			drawLine(startCol+0x01, startRow+0x0D, startCol+0x06, startRow+0x0D);
+			break;
+		case '7':
+			drawLine(startCol, startRow, startCol+0x06, startRow);
+			drawLine(startCol+0x06, startRow+0x01, startCol+0x06, startRow+0x0D);
+			break;
+		case'8':
+			drawLine(startCol+0x01, startRow, startCol+0x05, startRow);
+			drawLine(startCol+0x01, startRow+0x06, startCol+0x05, startRow+0x06);
+			drawLine(startCol+0x01, startRow+0x0D, startCol+0x05, startRow+0x0D);
+			drawLine(startCol, startRow, startCol, startRow+0x0D);
+			drawLine(startCol+0x06, startRow, startCol+0x06, startRow+0x0D);
+			break;
+		case '9':
+			drawLine(startCol+0x01, startRow, startCol+0x05, startRow);
+			drawLine(startCol+0x01, startRow+0x06, startCol+0x05, startRow+0x06);
+			drawLine(startCol+0x01, startRow+0x0D, startCol+0x05, startRow+0x0D);
+			drawLine(startCol, startRow, startCol, startRow+0x06);
+			drawLine(startCol+0x06, startRow, startCol+0x06, startRow+0x0D);
+			break;
+		case '0':
+			drawLine(startCol+0x01, startRow, startCol+0x05, startRow);
+			drawLine(startCol+0x01, startRow+0x0D, startCol+0x05, startRow+0x0D);
+			drawLine(startCol, startRow, startCol, startRow+0x0D);
+			drawLine(startCol+0x06, startRow, startCol+0x06, startRow+0x0D);
+			break;
+		case ':':
+			drawLine(startCol, startRow+0x07, startCol, startRow+0x07);
+			drawLine(startCol, startRow+0x0D, startCol, startRow+0x0D);
+			break;
+		case 'C':
+			drawLine(startCol, startRow, startCol, startRow+0x0D);
+			drawLine(startCol+0x01, startRow, startCol+0x06, startRow);
+			drawLine(startCol+0x01, startRow+0x0D, startCol+0x06, startRow+0x0D);
+			break;
+		case '^':
+			drawLine(startCol+0x04, startRow, startCol+0x06, startRow);
+			drawLine(startCol+0x04, startRow+0x02, startCol+0x06, startRow+0x02);
+			drawLine(startCol+0x04, startRow, startCol+0x04, startRow+0x02);
+			drawLine(startCol+0x06, startRow, startCol+0x06, startRow+0x02);
+			break;
+		case 'H':
+			drawLine(startCol, startRow, startCol, startRow+0x0D);
+			drawLine(startCol+0x06, startRow, startCol+0x06, startRow+0x0D);
+			drawLine(startCol, startRow+0x06, startCol+0x06, startRow+0x06);
+			break;
+		case 'i':
+			drawLine(startCol+0x03, startRow+0x07, startCol+0x03, startRow+0x0D);
+			drawLine(startCol+0x03, startRow+0x05, startCol+0x03, startRow+0x05);
+			break;
+		case 'd':
+			drawLine(startCol+0x06, startRow, startCol+0x06, startRow+0x0D);
+			drawLine(startCol+0x06, startRow+0x07, startCol, startRow+0x07);
+			drawLine(startCol, startRow+0x07, startCol, startRow+0x0D);
+			drawLine(startCol, startRow+0x0D, startCol+0x06, startRow+0x0D);
+			break;
+		case 'y':
+			drawLine(startCol, startRow+0x07, startCol, startRow+0x0D);
+			drawLine(startCol, startRow+0x0D, startCol+0x06, startRow+0x0D);
+			drawLine(startCol+0x06, startRow+0x07, startCol+0x06, startRow+0x11);
+			drawLine(startCol+0x06, startRow+0x11, startCol, startRow+0x11);
+			break;
+		case '.':
+			drawLine(startCol, startRow+0x0C, startCol, startRow+0x0D);
+			drawLine(startCol+0x01, startRow+0x0C, startCol+0x01, startRow+0x0D);
+			break;
+		case '%':
+			drawLine(startCol, startRow, startCol+0x02, startRow);
+			drawLine(startCol, startRow+0x02, startCol+0x02, startRow+0x02);
+			drawLine(startCol, startRow, startCol, startRow+0x02);
+			drawLine(startCol+0x02, startRow, startCol+0x02, startRow+0x02);
+
+			drawLine(startCol+0x04, startRow+0x0B, startCol+0x06, startRow+0x0B);
+			drawLine(startCol+0x04, startRow+0x0D, startCol+0x06, startRow+0x0D);
+			drawLine(startCol+0x04, startRow+0x0B, startCol+0x04, startRow+0x0D);
+			drawLine(startCol+0x06, startRow+0x0B, startCol+0x06, startRow+0x0D);
+
+			drawLine(startCol, startRow+0x0D, startCol+0x06, startRow);
+			break;
+		case ' ':
+			break;
+		case '-':
+			drawLine(startCol, startRow+0x07, startCol+0x06, startRow+0x07);
+			break;
+		case 'G':
+			drawLine(startCol, startRow, startCol+0x06, startRow);
+			drawLine(startCol, startRow+0x01, startCol, startRow+0x0D);
+			drawLine(startCol+0x01, startRow+0x0D, startCol+0x06, startRow+0x0D);
+			drawLine(startCol+0x06, startRow+0x0D, startCol+0x06, startRow+0x07);
+			drawLine(startCol+0x06, startRow+0x07, startCol+0x03, startRow+0x07);
+			break;
+		case 's':
+			drawLine(startCol, startRow+0x07, startCol+0x06, startRow+0x07);
+			drawLine(startCol, startRow+0x08, startCol, startRow+0x0A);
+			drawLine(startCol, startRow+0x0A, startCol+0x06, startRow+0x0A);
+		        drawLine(startCol+0x06, startRow+0x0A, startCol+0x06, startRow+0x0D);
+			drawLine(startCol+0x06, startRow+0x0D, startCol, startRow+0x0D);
+			break;
+		case 'P':
+			drawLine(startCol, startRow, startCol, startRow+0x0D);
+			drawLine(startCol, startRow, startCol+0x06, startRow);
+			drawLine(startCol+0x06, startRow, startCol+0x06, startRow+0x06);
+			drawLine(startCol+0x06, startRow+0x06, startCol, startRow+0x06);
+			break;
+		case 'k':
+			drawLine(startCol, startRow, startCol, startRow+0x0D);
+			drawLine(startCol, startRow+0x0A, startCol+0x06, startRow+0x07);
+			drawLine(startCol, startRow+0x0A, startCol+0x06, startRow+0x0D);
+			break;
+	}
+}
+
+// Rectangle to delete old values displayed on the OLED screen so that they can be replaced with new values
+
+void
+resetRect(int startCol,int startRow, int endCol, int endRow, int blue, int green, int red)
+{
+	writeCommand(0x22);
+	writeCommand(startCol);
+	writeCommand(startRow);
+	writeCommand(endCol);
+	writeCommand(endRow);
+	writeCommand(blue);
+	writeCommand(green);
+	writeCommand(red);
+	writeCommand(blue);
+	writeCommand(green);
+	writeCommand(red);
+}
+
+// Initialise the display with the appropriate characters and values
+
+void
+displayInit(void)
+{
+	int startCol = 0x01;
+	int startRow = 0x01;
+	char tempArray[] = "Temp:";
+	for (int i=0;i<sizeof tempArray;i++)
+	{
+		drawChar(startCol, startRow, tempArray[i]);
+		startCol+=0x08;
+	}
+	char valueArray[] = "00^C";
+	startCol = 0x24;
+	for (int i=0;i<sizeof valueArray;i++)
+	{
+		drawChar(startCol, startRow, valueArray[i]);
+		startCol+=0x08;
+	}
+	startCol = 0x01;
+	startRow = 0x11;
+	char humArray[] = "Hum:";
+	for (int i=0;i<sizeof humArray;i++)
+	{
+		drawChar(startCol, startRow, humArray[i]);
+		startCol+=0x08;
+	}
+	char humValue[] = "00%";
+	startCol = 0x24;
+	for (int i=0;i<sizeof humValue;i++)
+	{
+		drawChar(startCol, startRow, humValue[i]);
+		startCol+=0x08;
+	}
+	startCol = 0x01;
+	startRow = 0x21;
+	char gasArray[] = "Gas:";
+	for (int i=0;i<sizeof gasArray;i++)
+	{
+		drawChar(startCol, startRow, gasArray[i]);
+		startCol+=0x08;
+	}
+	char gasValue[] = "000";
+       	startCol = 0x24;
+	for (int i=0;i<sizeof gasValue;i++)
+	{
+		drawChar(startCol, startRow, gasValue[i]);
+		startCol+=0x08;
+	}
+	startCol = 0x01;
+	startRow = 0x31;
+	char presArray[] = "Pres:";
+	for (int i=0;i<sizeof presArray;i++)
+	{
+		drawChar(startCol, startRow, presArray[i]);
+		startCol+=0x08;
+	}
+	startCol = 0x24;
+	char presValue[] = "000kPa";
+	for (int i=0;i<sizeof presValue;i++)
+	{
+		drawChar(startCol, startRow, presValue[i]);
+		startCol+=0x08;
+	}
+}
+
+// Fill the screen with a green colour
+
+void
+greenFill(void)
+{
+	// Clear Screen
+	writeCommand(kSSD1331CommandCLEAR);
+	writeCommand(0x00);
+	writeCommand(0x00);
+	writeCommand(0x5F);
+	writeCommand(0x3F);
+
+	// Fill screen with Green
+	writeCommand(0x22);
+	writeCommand(0x00);
+	writeCommand(0x00);
+	writeCommand(0x5F);
+	writeCommand(0x3F);
+	writeCommand(0x00);
+	writeCommand(0x1C);
+	writeCommand(0x00);
+	writeCommand(0x00);
+	writeCommand(0x1C);
+	writeCommand(0x00);
+}
 
 int
 devSSD1331init(void)
@@ -129,7 +495,7 @@ devSSD1331init(void)
 	writeCommand(kSSD1331CommandCONTRASTA);		// 0x81
 	writeCommand(0x91);
 	writeCommand(kSSD1331CommandCONTRASTB);		// 0x82
-	writeCommand(0x50);
+	writeCommand(0xFF);
 	writeCommand(kSSD1331CommandCONTRASTC);		// 0x83
 	writeCommand(0x7D);
 	writeCommand(kSSD1331CommandDISPLAYON);		// Turn on oled panel
@@ -153,18 +519,17 @@ devSSD1331init(void)
 	/*
 	 *	Any post-initialization drawing commands go here.
 	 */
-	SEGGER_RTT_WriteString(0, "\nThis is the start of the OLED commands\n");
-	writeCommand(0x22);
-	writeCommand(0x03);
-	writeCommand(0x02);
-	writeCommand(0x12);
-	writeCommand(0x15);
+	/*writeCommand(0x22);
+	writeCommand(0x00);
+	writeCommand(0x00);
+	writeCommand(0x5F);
+	writeCommand(0x3F);
 	writeCommand(0x00);
 	writeCommand(0x1C);
 	writeCommand(0x00);
 	writeCommand(0x00);
 	writeCommand(0x1C);
-	writeCommand(0x00);
-	SEGGER_RTT_WriteString(0, "This is the end of the OLED commands\n");
+	writeCommand(0x00);*/
+
 	return 0;
 }

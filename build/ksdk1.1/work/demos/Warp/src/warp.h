@@ -2,6 +2,41 @@
 
 #define	min(x,y)	((x) < (y) ? (x) : (y))
 #define	USED(x)		(void)(x)
+/** Array Index to Field data mapping for BME680 Calibration Data from https://github.com/BoschSensortec/BME680_driver*/
+#define BME680_T2_LSB_REG	(1)
+#define BME680_T2_MSB_REG	(2)
+#define BME680_T3_REG		(3)
+#define BME680_P1_LSB_REG	(5)
+#define BME680_P1_MSB_REG	(6)
+#define BME680_P2_LSB_REG	(7)
+#define BME680_P2_MSB_REG	(8)
+#define BME680_P3_REG		(9)
+#define BME680_P4_LSB_REG	(11)
+#define BME680_P4_MSB_REG	(12)
+#define BME680_P5_LSB_REG	(13)
+#define BME680_P5_MSB_REG	(14)
+#define BME680_P7_REG		(15)
+#define BME680_P6_REG		(16)
+#define BME680_P8_LSB_REG	(19)
+#define BME680_P8_MSB_REG	(20)
+#define BME680_P9_LSB_REG	(21)
+#define BME680_P9_MSB_REG	(22)
+#define BME680_P10_REG		(23)
+#define BME680_H2_MSB_REG	(25)
+#define BME680_H2_LSB_REG	(26)
+#define BME680_H1_LSB_REG	(26)
+#define BME680_H1_MSB_REG	(27)
+#define BME680_H3_REG		(28)
+#define BME680_H4_REG		(29)
+#define BME680_H5_REG		(30)
+#define BME680_H6_REG		(31)
+#define BME680_H7_REG		(32)
+#define BME680_T1_LSB_REG	(33)
+#define BME680_T1_MSB_REG	(34)
+#define BME680_GH2_LSB_REG	(35)
+#define BME680_GH2_MSB_REG	(36)
+#define BME680_GH1_REG		(37)
+#define BME680_GH3_REG		(38)
 
 typedef enum
 {
@@ -43,6 +78,7 @@ typedef enum
 
 	kWarpTypeMaskTotalVOC		= (1 << 28),
 	kWarpTypeMaskEquivalentCO2	= (1 << 29),
+	kWarpTypeMaskCurrent		= (1 << 30),
 
 
 	/*
@@ -181,6 +217,7 @@ typedef struct
 
 typedef enum
 {
+
 	kWarpSensorConfigurationRegisterMMA8451QF_SETUP			= 0x09,
 	kWarpSensorConfigurationRegisterMMA8451QCTRL_REG1		= 0x2A,
 

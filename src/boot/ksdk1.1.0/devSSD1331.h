@@ -1,7 +1,6 @@
 /*
  *	See https://github.com/adafruit/Adafruit-SSD1331-OLED-Driver-Library-for-Arduino for the Arduino driver.
  */
-
 typedef enum
 {
 	kSSD1331ColororderRGB		= 1,
@@ -43,3 +42,10 @@ typedef enum
 } SSD1331Commands;
 
 int	devSSD1331init(void);
+int 	writeCommand(uint8_t commandByte);
+void 	greenFill(void);
+void	redFill(void);
+void	displayInit(void);
+void	resetRect(int startCol, int startRow, int endCol, int endRow, int blue, int green, int red);
+void	drawChar(int startCol, int startRow, char chr);
+void	drawLine(int startCol, int startRow, int endCol, int endRow);

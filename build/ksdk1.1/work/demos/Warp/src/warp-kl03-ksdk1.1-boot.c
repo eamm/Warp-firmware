@@ -55,6 +55,7 @@
 #include "SEGGER_RTT.h"
 #include "warp.h"
 #include "devSSD1331.h"
+//#include "devINA219.h" 
 
 #define WARP_FRDMKL03
 
@@ -83,7 +84,9 @@
 //#include "devRV8803C7.h"
 //#include "devISL23415.h"
 #else
-#	include "devMMA8451Q.h"
+#include "devBME680.h"
+//#include "devTextSSD1331.h"
+// #include "devMMA8451Q.h"
 #endif
 
 
@@ -120,6 +123,8 @@ volatile WarpI2CDeviceState			deviceBMX055magState;
 volatile WarpI2CDeviceState			deviceMMA8451QState;
 #endif
 
+volatile WarpI2CDeviceState			deviceINA219State;
+
 #ifdef WARP_BUILD_ENABLE_DEVLPS25H
 volatile WarpI2CDeviceState			deviceLPS25HState;
 #endif
@@ -143,6 +148,10 @@ volatile WarpI2CDeviceState			deviceL3GD20HState;
 #ifdef WARP_BUILD_ENABLE_DEVBME680
 volatile WarpI2CDeviceState			deviceBME680State;
 volatile uint8_t				deviceBME680CalibrationValues[kWarpSizesBME680CalibrationValuesCount];
+volatile uint16_t				calc_temp;
+volatile uint32_t				calc_hum;
+volatile uint32_t				pressure_comp;
+volatile uint32_t        			calc_gas_res;
 #endif
 
 #ifdef WARP_BUILD_ENABLE_DEVTCS34725
@@ -1117,8 +1126,6 @@ main(void)
 	 */
 	SEGGER_RTT_ConfigUpBuffer(0, NULL, NULL, 0, SEGGER_RTT_MODE_NO_BLOCK_TRIM);
 
-	devSSD1331init();
-	SEGGER_RTT_WriteString(0, "I really hope that devSSD1331 is running");
 	SEGGER_RTT_WriteString(0, "\n\n\n\rBooting Warp, in 3... ");
 	OSA_TimeDelay(200);
 	SEGGER_RTT_WriteString(0, "2... ");
@@ -1252,6 +1259,8 @@ main(void)
 	initMMA8451Q(	0x1D	/* i2cAddress */,	&deviceMMA8451QState	);
 #endif
 
+//	initINA219(	0x40	/*i2cAddress */,	&deviceINA219State	);
+
 #ifdef WARP_BUILD_ENABLE_DEVLPS25H
 	initLPS25H(	0x5C	/* i2cAddress */,	&deviceLPS25HState	);
 #endif
@@ -1354,7 +1363,195 @@ main(void)
 	 *	Notreached
 	 */
 #endif
+	/*SEGGER_RTT_WriteString(0, "\n We are just before devSSD1331init \n");
+	devSSD1331init();
+	SEGGER_RTT_WriteString(0, "\n We are just after devSSD1331init \n ");
+	uint16_t myI2cPullupValue = 32768;
+	enableI2Cpins(myI2cPullupValue);
+	SEGGER_RTT_WriteString(0, "\n We are just before print sensor data \n");*/
+	/*configureSensorINA219(myI2cPullupValue);*/
+	/*int i;
+	for (i=0; i<1000; i++)
+	{
+		printSensorDataINA219(0);
+	}
+	SEGGER_RTT_WriteString(0, "\n We are just after print sensor data \n");*/
 
+	// Initialise everything for the environmental sensing application
+	enableI2Cpins((uint8_t) 32768);
+	configureSensorBME680(  0b00000001,     /*      Humidity oversampling (OSRS) to 1x      */
+			0b00100100,     /*      Temperature oversample 1x, pressure overdsample 1x, mode 00     */
+			0b00000000,     /*      Turn off heater with 0b00001000                                         */
+			menuI2cPullupValue
+			);
+	devSSD1331init();
+	int state, burnIn = 0;
+	uint64_t gasRunAvg = 0;
+	int32_t gasBaseLine;
+	double gasScore;
+	int intGasScore = 100;
+	state = 0;
+	greenFill();
+	displayInit();
+	int startCol;
+	int startRow;
+	char tempValueArray[2];
+	char humValueArray[2];
+	char gasValueArray[3];
+	char presValueArray[3];
+	while (1)
+	{
+		printSensorDataBME680(0, 32768);
+
+		// Implementation of the gas sensing capabilities
+
+		// Burn in for 50 iterations
+		if (burnIn < 50)
+		{
+			gasRunAvg += calc_gas_res;					// Keep track of running average
+			SEGGER_RTT_printf(0, "Running average: %u \n", gasRunAvg);
+		}
+		else if (burnIn == 50)
+		{
+			gasBaseLine = (gasRunAvg) / 50;					// Define the gas baseline
+			SEGGER_RTT_printf(0, "Gas baseline: %u \n", gasBaseLine);
+		}
+		else
+		{
+			if (calc_gas_res < gasBaseLine)					// If resistance is below baseline, re-calculate the gas score
+			{
+				gasScore = (double) ((double) calc_gas_res / (double) gasBaseLine)*100;
+				intGasScore = (int) gasScore;
+				if (intGasScore < 40)					// Define dangerous VOC levels
+				{
+					SEGGER_RTT_WriteString(0, "Dangerous levels of VOC pollution\n");
+				}
+			}
+			else								// If resistance is above baseline, cap the gas score at a hundred
+			{
+				intGasScore = 100;
+			}
+			SEGGER_RTT_printf(0, "Gas Score: %u \n", intGasScore);
+		}
+
+		// Define an unsafe environment, dispay a red background if operating in this regime
+		if ((((calc_temp > 2600) | (calc_temp <2000)) | ((calc_hum > 70000) | (calc_hum < 40000)) | (intGasScore < 40)) & (state == 0))	
+		{
+			redFill();
+			displayInit();
+			state = 1;
+		}
+		// Define safe environment
+		if ((((calc_temp <= 2600) & (calc_temp >= 2000)) & ((calc_hum <= 70000) & (calc_hum >= 40000)) & (intGasScore >=40)) & (state == 1))
+		{
+			greenFill();
+			displayInit();
+			state = 0;
+		}
+
+
+		// Take temperature and humidity values and display them on the OLED screen
+		startCol = 0x24;
+		startRow = 0x01;
+
+		// Convert from integer to character type to enable OLED draw commands
+		
+		//tempValueArray[4] = calc_temp %10 + '0';
+		//tempValueArray[3] = (calc_temp / 10) % 10 + '0';
+		//tempValueArray[2] = '.';
+		tempValueArray[1] = (calc_temp / 100) % 10 + '0';
+		tempValueArray[0] = (calc_temp / 1000) % 10 + '0';
+
+		if (state == 1)
+		{
+			resetRect(startCol, startRow, startCol+0x10, startRow+0x0D, 0x1C, 0x00, 0x00);	// Reset the region of the screen that displays temperature
+		}
+		if (state ==0)
+		{
+			resetRect(startCol, startRow, startCol+0x10, startRow+0x0D, 0x00, 0x1C, 0x00);
+		}
+
+
+		for (int i=0;i<sizeof tempValueArray;i++)
+		{
+			drawChar(startCol, startRow, tempValueArray[i]);
+			startCol+=0x08;
+		}
+
+		startCol = 0x24;
+		startRow = 0x11;
+
+		// Convert from integer form to character form
+
+		//humValueArray[5] = calc_hum % 10 + '0';
+		//humValueArray[4] = (calc_hum / 10) % 10 + '0';
+		//humValueArray[2] = '.';
+	        //humValueArray[3] = (calc_hum / 100) % 10 + '0';
+		humValueArray[1] = (calc_hum / 1000) % 10 + '0';
+		humValueArray[0] = (calc_hum / 10000) % 10 + '0';
+
+		if (state ==1)
+		{
+			resetRect(startCol, startRow, startCol+0x0F, startRow+0x0D, 0x1C, 0x00, 0x00);
+		}
+		if (state == 0)
+		{
+			resetRect(startCol, startRow, startCol+0x0F, startRow+0x0D, 0x00, 0x1C, 0x00);
+		}
+
+		for (int i=0;i<sizeof humValueArray;i++)
+		{
+			drawChar(startCol, startRow, humValueArray[i]);
+			startCol+=0x08;
+		}
+
+		startCol = 0x24;
+		startRow = 0x21;
+
+		gasValueArray[2] = intGasScore % 10 + '0';
+		gasValueArray[1] = (intGasScore / 10) % 10 + '0';
+		gasValueArray[0] = (intGasScore / 100) % 10 + '0';
+
+		if (state == 1)
+		{
+			resetRect(startCol, startRow, startCol+0x2F, startRow+0x0D, 0x1C, 0X00, 0X00);
+		}
+		if (state == 0)
+		{
+			resetRect(startCol, startRow, startCol+0x2F, startRow+0x0D, 0x00, 0x1C, 0x00);
+		}
+
+		for (int i=0;i<sizeof gasValueArray;i++)
+		{
+			drawChar(startCol, startRow, gasValueArray[i]);
+			startCol+=0x08;
+		}
+
+		startCol = 0x24;
+		startRow = 0x31;
+
+		presValueArray[2] = (pressure_comp / 1000) % 10 + '0';
+		presValueArray[1] = (pressure_comp / 10000) % 10 + '0';
+		presValueArray[0] = (pressure_comp / 100000) % 10 + '0';
+
+		if (state == 1)
+		{
+			resetRect(startCol, startRow, startCol+0x17, startRow+0x0D, 0x1C, 0X00, 0X00);
+		}
+		if (state == 0)
+		{
+			resetRect(startCol, startRow, startCol+0x17, startRow+0x0D, 0x00, 0x1C, 0x00);
+		}
+		for (int i=0;i<sizeof presValueArray;i++)
+		{
+			drawChar(startCol, startRow, presValueArray[i]);
+			startCol+=0x08;
+		}
+
+		OSA_TimeDelay(5000);
+		burnIn += 1;
+	}
+	//devSSD1331init();
 	while (1)
 	{
 		/*
@@ -2678,7 +2875,7 @@ printAllSensors(bool printHeadersAndCalibration, bool hexModeFlag, int menuDelay
 		printSensorDataL3GD20H(hexModeFlag);
 		#endif
 		#ifdef WARP_BUILD_ENABLE_DEVBME680
-		printSensorDataBME680(hexModeFlag);
+		printSensorDataBME680(hexModeFlag, 32768);
 		#endif
 		#ifdef WARP_BUILD_ENABLE_DEVBMX055
 		printSensorDataBMX055accel(hexModeFlag);
@@ -2859,8 +3056,7 @@ loopForSensor(	const char *  tagString,
 	SEGGER_RTT_printf(0, "\r\t%d bad commands.\n\n", nBadCommands);
 	OSA_TimeDelay(50);
 #endif
-
-
+	
 	return;
 }
 

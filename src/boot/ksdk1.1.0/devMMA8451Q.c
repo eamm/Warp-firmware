@@ -73,6 +73,7 @@ initMMA8451Q(const uint8_t i2cAddress, WarpI2CDeviceState volatile *  deviceStat
 WarpStatus
 writeSensorRegisterMMA8451Q(uint8_t deviceRegister, uint8_t payload, uint16_t menuI2cPullupValue)
 {
+	//SEGGER_RTT_WriteString(0, "\n Write command called \n");
 	uint8_t		payloadByte[1], commandByte[1];
 	i2c_status_t	status;
 
@@ -124,6 +125,7 @@ writeSensorRegisterMMA8451Q(uint8_t deviceRegister, uint8_t payload, uint16_t me
 WarpStatus
 configureSensorMMA8451Q(uint8_t payloadF_SETUP, uint8_t payloadCTRL_REG1, uint16_t menuI2cPullupValue)
 {
+	SEGGER_RTT_WriteString(0, "\n The configuration has been called \n");
 	WarpStatus	i2cWriteStatus1, i2cWriteStatus2;
 
 	i2cWriteStatus1 = writeSensorRegisterMMA8451Q(kWarpSensorConfigurationRegisterMMA8451QF_SETUP /* register address F_SETUP */,
@@ -140,6 +142,7 @@ configureSensorMMA8451Q(uint8_t payloadF_SETUP, uint8_t payloadCTRL_REG1, uint16
 WarpStatus
 readSensorRegisterMMA8451Q(uint8_t deviceRegister, int numberOfBytes)
 {
+	//SEGGER_RTT_WriteString(0, "\n The readSensorRegisterMMA8451Q has been called \n");
 	uint8_t		cmdBuf[1] = {0xFF};
 	i2c_status_t	status;
 
@@ -160,6 +163,7 @@ readSensorRegisterMMA8451Q(uint8_t deviceRegister, int numberOfBytes)
 		case 0x2e: case 0x2f: case 0x30: case 0x31:
 		{
 			/* OK */
+			//SEGGER_RTT_WriteString(0, "\n Haven't fallen over by the end of the address switch \n");
 			break;
 		}
 		
@@ -178,7 +182,7 @@ readSensorRegisterMMA8451Q(uint8_t deviceRegister, int numberOfBytes)
 
 
 	cmdBuf[0] = deviceRegister;
-
+	//SEGGER_RTT_WriteString(0, " \n Just before the master receive data now \n");
 	status = I2C_DRV_MasterReceiveDataBlocking(
 							0 /* I2C peripheral instance */,
 							&slave,
@@ -187,12 +191,13 @@ readSensorRegisterMMA8451Q(uint8_t deviceRegister, int numberOfBytes)
 							(uint8_t *)deviceMMA8451QState.i2cBuffer,
 							numberOfBytes,
 							gWarpI2cTimeoutMilliseconds);
+	//SEGGER_RTT_WriteString(0, "\n Just after master receive data now \n");
 
 	if (status != kStatus_I2C_Success)
 	{
 		return kWarpStatusDeviceCommunicationFailed;
 	}
-
+	//SEGGER_RTT_WriteString(0, "\n About to return \n");
 	return kWarpStatusOK;
 }
 
@@ -221,7 +226,7 @@ printSensorDataMMA8451Q(bool hexModeFlag)
 	readSensorRegisterValueMSB = deviceMMA8451QState.i2cBuffer[0];
 	readSensorRegisterValueLSB = deviceMMA8451QState.i2cBuffer[1];
 	readSensorRegisterValueCombined = ((readSensorRegisterValueMSB & 0xFF) << 6) | (readSensorRegisterValueLSB >> 2);
-
+	SEGGER_RTT_WriteString(0, "The print sensor value function is running");
 	/*
 	 *	Sign extend the 14-bit value based on knowledge that upper 2 bit are 0:
 	 */
